@@ -12,7 +12,11 @@ class Criba {
 
 	public function getPrimes(
 	) {
-		return array($this->upTo);
+		$primes = array();
+		for ($number = 2; $number <= $this->upTo; $number++) {
+			$primes []= $number;
+		}
+		return $primes;
 	}
 
 }

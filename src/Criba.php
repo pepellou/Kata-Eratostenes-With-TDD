@@ -9,6 +9,7 @@ class Criba {
 		$upTo
 	) {
 		$this->upTo = $upTo;
+		$this->buildCriba();
 	}
 
 	public function getPrimes(
@@ -25,7 +26,6 @@ class Criba {
 	private function isPrime(
 		$number
 	) {
-		$this->buildCriba();
 		return $this->numbers_list[$number];
 	}
 

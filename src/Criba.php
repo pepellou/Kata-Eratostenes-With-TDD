@@ -16,8 +16,10 @@ class Criba {
 	) {
 		$this->cleanCriba();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
-				$this->numbers_list[$multipleOfN] = "not prime";
+			if ($this->numbers_list[$n] == "prime") {
+				for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
+					$this->numbers_list[$multipleOfN] = "not prime";
+				}
 			}
 		}
 	}

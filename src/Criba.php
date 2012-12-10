@@ -3,6 +3,7 @@
 class Criba {
 
 	private $upTo;
+	private $numbers_list;
 
 	public function __construct(
 		$upTo
@@ -24,17 +25,16 @@ class Criba {
 	private function isPrime(
 		$number
 	) {
-		$criba = $this->buildCriba();
-		return $criba[$number];
+		$this->buildCriba();
+		return $this->numbers_list[$number];
 	}
 
 	private function buildCriba(
 	) {
-		$criba = array();
+		$this->numbers_list = array();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			$criba[$n] = $this->primalityOf($n);
+			$this->numbers_list[$n] = $this->primalityOf($n);
 		}
-		return $criba;
 	}
 
 	private function primalityOf(

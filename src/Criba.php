@@ -24,7 +24,13 @@ class Criba {
 	private function isPrime(
 		$number
 	) {
-		return ($number != 4 && $number != 6);
+		if ($number == 4) {
+			return false;
+		}
+		if ($number == 6) {
+			return false;
+		}
+		return true;
 	}
 
 }

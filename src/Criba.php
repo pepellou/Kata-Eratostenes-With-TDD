@@ -18,9 +18,15 @@ class Criba {
 	private function fillCriba(
 	) {
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			if ($this->isPrime($n)) {
-				$this->markMultiplesOf($n);
-			}
+			$this->markMultiplesIfPrime($n);
+		}
+	}
+
+	private function markMultiplesIfPrime(
+		$n
+	) {
+		if ($this->isPrime($n)) {
+			$this->markMultiplesOf($n);
 		}
 	}
 

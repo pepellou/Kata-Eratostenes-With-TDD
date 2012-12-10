@@ -12,17 +12,6 @@ class Criba {
 		$this->buildCriba();
 	}
 
-	public function getPrimes(
-	) {
-		$primes = array();
-		for ($number = 2; $number <= $this->upTo; $number++) {
-			if ($this->numbers_list[$number] == "prime") {
-				$primes []= $number;
-			}
-		}
-		return $primes;
-	}
-
 	private function buildCriba(
 	) {
 		$this->numbers_list = array();
@@ -44,6 +33,17 @@ class Criba {
 			return false;
 		}
 		return true;
+	}
+
+	public function getPrimes(
+	) {
+		$primes = array();
+		for ($number = 2; $number <= $this->upTo; $number++) {
+			if ($this->numbers_list[$number] == "prime") {
+				$primes []= $number;
+			}
+		}
+		return $primes;
 	}
 
 }

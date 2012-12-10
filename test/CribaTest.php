@@ -4,23 +4,26 @@ require_once (dirname(__FILE__)."/../src/Criba.php");
 
 class CribaTest extends PHPUnit_Framework_TestCase {
 
-	public function test_2_is_prime(
+	/**
+	* @dataProvider known_primes_lists
+	*/
+	public function test_known_primes(
+		$topValue,
+		$expectedPrimesList
 	) {
-		$criba = new Criba(2);
+		$criba = new Criba($topValue);
 
 		$this->assertEquals(
-			array(2),
+			$expectedPrimesList,
 			$criba->getPrimes()
 		);
 	}
 
-	public function test_3_is_prime(
+	public static function known_primes_lists(
 	) {
-		$criba = new Criba(3);
-
-		$this->assertEquals(
-			array(2, 3),
-			$criba->getPrimes()
+		return array(
+			"up to 2" => array(2, array(2)),
+			"up to 3" => array(3, array(2, 3))
 		);
 	}
 

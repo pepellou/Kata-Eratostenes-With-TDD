@@ -27,12 +27,12 @@ class Criba {
 		$this->number_marks = array(
 		);
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			$this->number_marks[$n] = $this->checkIfNumberIsPrime($n);
+			$this->number_marks[$n] = $this->primalityOf($n);
 		}
 		return $this->number_marks[$number];
 	}
 
-	private function checkIfNumberIsPrime(
+	private function primalityOf(
 		$number
 	) {
 		if ($number == 4) {

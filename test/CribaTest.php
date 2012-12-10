@@ -23,7 +23,8 @@ class CribaTest extends PHPUnit_Framework_TestCase {
 	) {
 		return array(
 			"up to 2" => array(2, array(2)),
-			"up to 3" => array(3, array(2, 3))
+			"up to 3" => array(3, array(2, 3)),
+			"up to 4" => array(4, array(2, 3))
 		);
 	}
 

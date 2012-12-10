@@ -39,8 +39,8 @@ class Criba {
 	private function markMultiplesOf(
 		$n
 	) {
-		for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
-			$this->marks[$multipleOfN] = !self::$PRIME;
+		for ($multiple = 2 * $n; $multiple <= $this->upTo; $multiple += $n) {
+			$this->marks[$multiple] = !self::$PRIME;
 		}
 	}
 

@@ -2,10 +2,17 @@
 
 class Criba {
 
-	public static function primesUpTo(
-		$top
+	private $upTo;
+
+	public function __construct(
+		$upTo
 	) {
-		return array($top);
+		$this->upTo = $upTo;
+	}
+
+	public function getPrimes(
+	) {
+		return array($this->upTo);
 	}
 
 }

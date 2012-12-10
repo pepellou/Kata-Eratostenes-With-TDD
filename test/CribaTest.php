@@ -6,9 +6,11 @@ class CribaTest extends PHPUnit_Framework_TestCase {
 
 	public function test_2_is_prime(
 	) {
+		$criba = new Criba(2);
+
 		$this->assertEquals(
 			array(2),
-			Criba::primesUpTo(2)
+			$criba->getPrimes()
 		);
 	}
 

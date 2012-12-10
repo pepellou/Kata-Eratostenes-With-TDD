@@ -16,17 +16,11 @@ class Criba {
 	) {
 		$primes = array();
 		for ($number = 2; $number <= $this->upTo; $number++) {
-			if ($this->isPrime($number)) {
+			if ($this->numbers_list[$number]) {
 				$primes []= $number;
 			}
 		}
 		return $primes;
-	}
-
-	private function isPrime(
-		$number
-	) {
-		return $this->numbers_list[$number];
 	}
 
 	private function buildCriba(

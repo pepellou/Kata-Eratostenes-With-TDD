@@ -14,14 +14,19 @@ class Criba {
 
 	private function buildCriba(
 	) {
-		$this->numbers_list = array();
-		for ($n = 2; $n <= $this->upTo; $n++) {
-			$this->numbers_list[$n] = "prime";
-		}
+		$this->cleanCriba();
 		for ($n = 2; $n <= $this->upTo; $n++) {
 			if (!$this->primalityOf($n)) {
 				$this->numbers_list[$n] = "not prime";
 			}
+		}
+	}
+
+	private function cleanCriba(
+	) {
+		$this->numbers_list = array();
+		for ($n = 2; $n <= $this->upTo; $n++) {
+			$this->numbers_list[$n] = "prime";
 		}
 	}
 

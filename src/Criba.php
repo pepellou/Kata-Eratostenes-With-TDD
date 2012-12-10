@@ -19,9 +19,7 @@ class Criba {
 	) {
 		for ($n = 2; $n <= $this->upTo; $n++) {
 			if ($this->isPrime($n)) {
-				for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
-					$this->marks[$multipleOfN] = !self::$PRIME;
-				}
+				$this->markMultiplesOf($n);
 			}
 		}
 	}
@@ -30,6 +28,14 @@ class Criba {
 		$n
 	) {
 		return ($this->marks[$n] == self::$PRIME);
+	}
+
+	private function markMultiplesOf(
+		$n
+	) {
+		for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
+			$this->marks[$multipleOfN] = !self::$PRIME;
+		}
 	}
 
 	private function cleanCriba(

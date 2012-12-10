@@ -24,6 +24,17 @@ class Criba {
 	private function isPrime(
 		$number
 	) {
+		$this->number_marks = array(
+		);
+		for ($n = 2; $n <= $this->upTo; $n++) {
+			$this->number_marks[$n] = $this->checkIfNumberIsPrime($n);
+		}
+		return $this->number_marks[$number];
+	}
+
+	private function checkIfNumberIsPrime(
+		$number
+	) {
 		if ($number == 4) {
 			return false;
 		}

@@ -14,12 +14,17 @@ class Criba {
 	) {
 		$primes = array();
 		for ($number = 2; $number <= $this->upTo; $number++) {
-			$isPrime = ($number != 4);
-			if ($isPrime) {
+			if ($this->isPrime($number)) {
 				$primes []= $number;
 			}
 		}
 		return $primes;
+	}
+
+	private function isPrime(
+		$number
+	) {
+		return ($number != 4);
 	}
 
 }

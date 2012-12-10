@@ -16,8 +16,8 @@ class Criba {
 	) {
 		$this->cleanCriba();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			if (!$this->primalityOf($n)) {
-				$this->numbers_list[$n] = "not prime";
+			for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
+				$this->numbers_list[$multipleOfN] = "not prime";
 			}
 		}
 	}
@@ -28,21 +28,6 @@ class Criba {
 		for ($n = 2; $n <= $this->upTo; $n++) {
 			$this->numbers_list[$n] = "prime";
 		}
-	}
-
-	private function primalityOf(
-		$number
-	) {
-		if ($number == 4) {
-			return false;
-		}
-		if ($number == 6) {
-			return false;
-		}
-		if ($number == 8) {
-			return false;
-		}
-		return true;
 	}
 
 	public function getPrimes(

@@ -30,6 +30,9 @@ class Criba {
 		if ($number == 6) {
 			return false;
 		}
+		if ($number == 8) {
+			return false;
+		}
 		return true;
 	}
 

@@ -14,7 +14,8 @@ class Criba {
 	) {
 		$primes = array();
 		for ($number = 2; $number <= $this->upTo; $number++) {
-			if ($number != 4) {
+			$isPrime = ($number != 4);
+			if ($isPrime) {
 				$primes []= $number;
 			}
 		}

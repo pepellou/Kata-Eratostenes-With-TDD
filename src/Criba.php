@@ -11,12 +11,12 @@ class Criba {
 		$upTo
 	) {
 		$this->upTo = $upTo;
-		$this->buildCriba();
+		$this->cleanCriba();
+		$this->fillCriba();
 	}
 
-	private function buildCriba(
+	private function fillCriba(
 	) {
-		$this->cleanCriba();
 		for ($n = 2; $n <= $this->upTo; $n++) {
 			if ($this->isPrime($n)) {
 				for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {

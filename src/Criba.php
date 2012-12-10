@@ -24,12 +24,17 @@ class Criba {
 	private function isPrime(
 		$number
 	) {
-		$this->number_marks = array(
-		);
+		$criba = $this->buildCriba();
+		return $criba[$number];
+	}
+
+	private function buildCriba(
+	) {
+		$criba = array();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			$this->number_marks[$n] = $this->primalityOf($n);
+			$criba[$n] = $this->primalityOf($n);
 		}
-		return $this->number_marks[$number];
+		return $criba;
 	}
 
 	private function primalityOf(

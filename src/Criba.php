@@ -5,6 +5,8 @@ class Criba {
 	private $upTo;
 	private $numbers_list;
 
+	private static $PRIME = true;
+
 	public function __construct(
 		$upTo
 	) {
@@ -16,9 +18,9 @@ class Criba {
 	) {
 		$this->cleanCriba();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			if ($this->numbers_list[$n] == "prime") {
+			if ($this->numbers_list[$n] == self::$PRIME) {
 				for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
-					$this->numbers_list[$multipleOfN] = "not prime";
+					$this->numbers_list[$multipleOfN] = !self::$PRIME;
 				}
 			}
 		}
@@ -28,7 +30,7 @@ class Criba {
 	) {
 		$this->numbers_list = array();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			$this->numbers_list[$n] = "prime";
+			$this->numbers_list[$n] = self::$PRIME;
 		}
 	}
 
@@ -36,7 +38,7 @@ class Criba {
 	) {
 		$primes = array();
 		for ($number = 2; $number <= $this->upTo; $number++) {
-			if ($this->numbers_list[$number] == "prime") {
+			if ($this->numbers_list[$number] == self::$PRIME) {
 				$primes []= $number;
 			}
 		}

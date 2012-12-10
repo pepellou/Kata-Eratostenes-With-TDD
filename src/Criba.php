@@ -16,7 +16,12 @@ class Criba {
 	) {
 		$this->numbers_list = array();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			$this->numbers_list[$n] = $this->primalityOf($n) ? "prime" : "not prime";
+			$this->numbers_list[$n] = "prime";
+		}
+		for ($n = 2; $n <= $this->upTo; $n++) {
+			if (!$this->primalityOf($n)) {
+				$this->numbers_list[$n] = "not prime";
+			}
 		}
 	}
 

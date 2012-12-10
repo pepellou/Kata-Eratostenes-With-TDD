@@ -3,7 +3,7 @@
 class Criba {
 
 	private $upTo;
-	private $numbers_list;
+	private $marks;
 
 	private static $PRIME = true;
 
@@ -18,9 +18,9 @@ class Criba {
 	) {
 		$this->cleanCriba();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			if ($this->numbers_list[$n] == self::$PRIME) {
+			if ($this->marks[$n] == self::$PRIME) {
 				for ($multipleOfN = 2 * $n; $multipleOfN <= $this->upTo; $multipleOfN += $n) {
-					$this->numbers_list[$multipleOfN] = !self::$PRIME;
+					$this->marks[$multipleOfN] = !self::$PRIME;
 				}
 			}
 		}
@@ -28,9 +28,9 @@ class Criba {
 
 	private function cleanCriba(
 	) {
-		$this->numbers_list = array();
+		$this->marks = array();
 		for ($n = 2; $n <= $this->upTo; $n++) {
-			$this->numbers_list[$n] = self::$PRIME;
+			$this->marks[$n] = self::$PRIME;
 		}
 	}
 
@@ -38,7 +38,7 @@ class Criba {
 	) {
 		$primes = array();
 		for ($number = 2; $number <= $this->upTo; $number++) {
-			if ($this->numbers_list[$number] == self::$PRIME) {
+			if ($this->marks[$number] == self::$PRIME) {
 				$primes []= $number;
 			}
 		}
